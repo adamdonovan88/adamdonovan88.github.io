@@ -1,6 +1,7 @@
 @media only screen and (max-device-width: 4000px){
   .body .img{
     margin: auto;
+    position: absolute;
 }
 @media only screen and (max-device-width: 480px) {
   .body .img{
