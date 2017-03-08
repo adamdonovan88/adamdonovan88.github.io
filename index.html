@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <style>
-html { 
-  background: url(http://i3.kym-cdn.com/entries/icons/original/000/019/180/ezgif-2198194681.gif) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-  </style>
-
-</table
-  <link rel="stylesheet" href="css/styles.css">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pure CSS Animated Clouds</title>
-  
-    
-
-  
-
-  
+   <meta charset="UTF-8">
+   <title>sun dist</title>
 </head>
+<body>
+<button id="calculate">How far is the the closest sun</button>
+<div id="output"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="application/javascript">
+   $(document).ready(function() {
+       $('#calculate').click(function() {
+           function daysInMonth(month, year) {
+               return new Date(year, month + 1, 0).getDate();
+           }
 
+           var minDistanceFromSun = 91000000;
+           var time = new Date();
+           var progressThroughMonth = time.getDate() / daysInMonth(time.getMonth(), time.getFullYear());
 
+           console.log(time);
+           console.log(time.getDate());
+           console.log(time.getMonth());
+           console.log(time.getHours());
+           console.log(time.getMinutes());
+           console.log(time.getSeconds());
 
+           console.log(time.getMonth() + progressThroughMonth);
+
+           var extraDistance = 1750000 * Math.sin(.571 * progressThroughMonth - 1.57) + 1750000;
+
+           console.log(extraDistance);
+           console.log(minDistanceFromSun + extraDistance);
+           var roughDistance = minDistanceFromSun + extraDistance;
+           $('#output').html('~' + roughDistance + ' Miles')
+       })
+   })
+</script>
+</html>
